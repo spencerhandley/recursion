@@ -4,16 +4,16 @@
 // };
 
 // But instead we're going to implement it from scratch:
-var getElementsByClassName = function(className, tempElement){
-  var currentElement = (tempElement || document),
-    children = currentElement.childNodes,
+var getElementsByClassName = function(className, pass){
+  var holder = (pass || document),
+    children = holder.childNodes,
     results = [],
     classes = [];
-  for(var i =0;i<children.length;i++){    
+  for(var i = 0; i<children.length ; i++){    
     if(children[i].className && children[i].className !== '') {
       classes = children[i].className.split(' ');
-      classes.forEach(function(singleClass){
-        if(singleClass === className) {
+      classes.forEach(function(class){
+        if(class === className) {
           results.push(children[i]);
         }
       });
