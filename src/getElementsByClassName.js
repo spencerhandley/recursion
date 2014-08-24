@@ -12,8 +12,8 @@ var getElementsByClassName = function(className, pass){
   for(var i = 0; i<children.length ; i++){    
     if(children[i].className && children[i].className !== '') {
       classes = children[i].className.split(' ');
-      classes.forEach(function(class){
-        if(class === className) {
+      classes.forEach(function(singleClass){
+        if(singleClass === className) {
           results.push(children[i]);
         }
       });
